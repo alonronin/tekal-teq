@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "clean": "trash public/*",
+    "clean": "trash dist/*",
     "predev": "npm run clean",
     "dev": "webpack --config webpack.config.dev.js -w --devtool eval"
   },

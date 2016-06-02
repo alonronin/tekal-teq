@@ -6,6 +6,8 @@ angular.module('tikal-teq', [
 ])
 
 .controller('MyCtrl', function($scope){
+    'ngInject';
+
     this.title = 'working!';
 })
 

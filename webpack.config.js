@@ -10,15 +10,15 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve('./public'),
-        publicPath: './'
+        path: path.resolve('./dist'),
+        publicPath: '/'
     },
 
     context: path.resolve(__dirname, 'angular'),
 
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /(node_modules)/, loader: 'babel', query: {presets: ['es2015', 'stage-3']}},
+            {test: /\.js$/, exclude: /(node_modules)/, loaders: ['ng-annotate', 'babel-loader']},
             {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')},
             {test: /\.less$/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap!less')},
             {test: /\.(woff2?|ttf|svg|eot)?(\?.+)?$/, loader: 'file?name=fonts/[name].[ext]'},
