@@ -11,7 +11,7 @@ module.exports = {
 
     output: {
         path: path.resolve('./public'),
-        publicPath: '/'
+        publicPath: './'
     },
 
     context: path.resolve(__dirname, 'angular'),
