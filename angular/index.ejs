@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="tikal-teq">
 <head>
-    <meta charset="UTF-8">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-    <div ng-controller="MyCtrl as ctrl">
-        <h1>{{ctrl.title}}</h1>
-    </div>
+<ui-view></ui-view>
 </body>
 </html>

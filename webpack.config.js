@@ -22,7 +22,8 @@ module.exports = {
       {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')},
       {test: /\.less$/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap!less')},
       {test: /\.(woff2?|ttf|svg|eot)?(\?.+)?$/, loader: 'file?name=fonts/[name].[ext]'},
-      {test: /\.html$/, loader: 'raw'},
+      { test: /\.(jpg|png|gif)?(\?.+)?$/, loader: 'file?name=img/[name].[hash].[ext]' },
+      {test: /\.html$/, loader: 'html'},
       {test: /\.json$/, loader: 'json'},
       {test: require.resolve('jquery'), loader: 'expose?$'},
       {test: require.resolve('jquery'), loader: 'expose?jQuery'}

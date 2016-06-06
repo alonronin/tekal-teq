@@ -1,14 +1,25 @@
+require('../theme/index.less');
+
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import main from './main';
+import home from './home';
 
 angular.module('tikal-teq', [
-    uiRouter
+  main,
+  home
 ])
 
-.controller('MyCtrl', function($scope){
-    'ngInject';
+.config(function($urlRouterProvider, $locationProvider){
+  'ngInject';
 
-    this.title = 'working!';
+  $urlRouterProvider.rule(function ($i, $location) {
+    var path = $location.path();
+    var normalized = path.toLowerCase();
+    if (path != normalized) return normalized;
+  });
+
+  $urlRouterProvider.otherwise('/');
+
+  $locationProvider.html5Mode(false);
 })
-
 ;
