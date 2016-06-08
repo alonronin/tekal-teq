@@ -1,5 +1,5 @@
 {
-  "name": "tekal-teq",
+  "name": "tikal-teq",
   "version": "1.0.0",
   "description": "Tikal technical questionnaire for appliers.",
   "main": "./bin/www",
