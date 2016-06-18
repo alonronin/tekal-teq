@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: ['./app/index.js'],
+    teq: ['./teq/index.js'],
+    admin: ['./admin/index.js'],
     vendors: ['./vendors.js']
   },
 
@@ -45,7 +46,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Tikal TEQ',
-      template: 'index.ejs'
+      template: 'teq.ejs',
+      chunks: ['vendors', 'teq'],
+      filename: 'teq.html'
+    }),
+
+    new HtmlWebpackPlugin({
+      title: 'Tikal TEQ ADMIN',
+      template: 'admin.ejs',
+      chunks: ['vendors', 'admin'],
+      filename: 'admin.html'
     })
   ]
 };
