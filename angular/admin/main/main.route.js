@@ -8,7 +8,13 @@ export default function MainRoute ($stateProvider) {
       abstract: true,
       url: '',
       controller: 'MainCtrl as main',
-      template: require('./main.html')
+      template: require('./main.html'),
+      resolve: {
+        user: (User) => {
+          return User.get();
+        }
+      }
     })
+
 }
 
